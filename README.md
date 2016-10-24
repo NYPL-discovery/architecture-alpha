@@ -1,5 +1,5 @@
-# NYPL Registry Architecture Diagram
+# NYPL Discovery Diagram
 
-# https://nypl-registry.github.io/architecture/
+# https://nypl-discovery.github.io/architecture-alpha/
 
 Built using: https://github.com/nypl-spacetime/architecture
