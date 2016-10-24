@@ -181,7 +181,9 @@ function createPopup (data, point) {
     document.head.appendChild(style)
     var sheet = style.sheet
 
-    sheet.addRule('.arrow-box:after', 'border-bottom-color: ' + data.color.replace(',0.55', ',1') + '', 0)
+    if (sheet.addRule) {
+      sheet.addRule('.arrow-box:after', 'border-bottom-color: ' + data.color.replace(',0.55', ',1') + '', 0)
+    }
     // sheet.addRule('.arrow-box:after', 'border-bottom-color: ' + data.color + ', border-width: 10px, margin-left: -10px')
     // console.log('border-bottom-color: ' + data.color + ', border-width: 10px, margin-left: -10px')
 
