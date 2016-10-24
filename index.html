@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Discovery/ReCAP Alpha Status</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/popup.css">
+  <script src="js/d3.v3.min.js" charset="utf-8"></script>
+  <link rel="shortcut icon" href="images/favicon.png">
+</head>
+<body>
+  <header></header>
+  <div class="container" id="contents">
+    <h1>Discovery/RIH/ReCAP Alpha Status</h1>
+    <p>
+      This diagram shows the current state of Discovery project including ReCAP and Research Item Holds.
+    </p>
+    <p>
+      Click component for details.<br>
+      Components <b>completed</b> are <span class='legend-block finished-color5'>green</span>.
+      Components <b>in progess</b> are <span class='legend-block inprogress-color'>yellow</span>.
+      Components <b>todo</b> are <span class='legend-block todo-color'>red</span>.<br>
+
+
+
+    </p>
+    <hr>
+    <div id='architecture'>
+    </div>
+    <div id="popup" class="arrow-box hidden">
+      <div id="popup-link">
+        <a href="" target="_blank"></a>
+      </div>
+      <div id="popup-contents" class="markdown-body">
+      </div>
+    </div>
+  </div>
+  <footer></footer>
+  <script src="js/github-auth.js" charset="utf-8"></script>
+  <script src="js/architecture.js" charset="utf-8"></script>
+</body>
+</html>

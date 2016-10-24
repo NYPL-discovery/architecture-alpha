@@ -1,0 +1,107 @@
+{
+    "arch-classify-serializer": {
+        "color": "rgba(255,0,0,0.55)",
+        "desc": "This plugin serializer enriches the records with data from OCLC Classify, it adds LCC, Work ID. This allows us to organize/sort the collection via LCC (Library of congress classification, the system used by majority of US academic libraries for around 80% of our records) and allow us to cluster resources that are the same Work but under disparate bibs due to different editions and medium.",
+        "opacity" : 1
+    },
+    "arch-combined-store": {
+        "color": "rgba(76,187,23,0.55)",
+        "desc": "A JSON store of the data harvested out of Sierra and ReCAP. Can be used to support ReCAP data requirements such as ongoing accessions. Also serves as recovery point, local copy of harvested data that can quickly repopulate the Kafka system.",
+        "opacity" : 1
+    },
+    "arch-data-api": {
+        "color": "rgba(255,255,0,0.55)",
+        "desc": "APIs that support ReCAP and other data requirements including ongoing accessions which SCSB can communicate with.",
+        "opacity" : 1
+    },
+    "arch-db-harvester": {
+        "color": "grey",
+        "desc": "An alternative process to harvest Sierra data from the database and not via the API, pending the replica database being procured from Innovative. Not blocking the Alpha release.",
+        "opacity" : 0.25
+    },
+    "arch-discovery-api": {
+        "color": "rgba(255,255,0,0.55)",
+        "desc": "The Discovery API powers the discovery website, it returns data from the index for search results and displaying item pages. A Node JS application.",
+        "opacity" : 1
+    },
+    "arch-discovery-indexer": {
+        "color": "rgba(255,255,0,0.55)",
+        "desc": "The indexer listens for NYPL Core resources and populates them into our Lucene Elastic Search index which powers our search engine. A Node JS application.",
+        "opacity" : 1
+    },
+    "arch-discovery-serializer": {
+        "color": "rgba(255,255,0,0.55)",
+        "desc": "Listens to the Kafka system for new and updated bibs and items. It transforms them into our NYPL Core data model which provides opportunities for remediation, record merging (Sierra ReCAP records with SCSB version of them) and enrichment. <br><br> The serialization stack is built like a plugin system, the core serializer has no external dependencies transforms the data into the basic record. Further serializers are optional and provided enhancements to the data but are not required to be successful for the record to appear in the discovery website.<br> A Node JS application.",
+        "opacity" : 1
+    },
+    "arch-discovery-website": {
+        "color": "rgba(255,255,0,0.55)",
+        "desc": "The Discovery website, a React application with server side rendering. Houses the Home/Search Result/Item pages.",
+        "opacity" : 1
+    },
+    "arch-elasticsearch": {
+        "color": "rgba(255,255,0,0.55)",
+        "desc": "We are using a Elastic Search cluster to power the Alpha search requirements.",
+        "opacity" : 1
+    },
+    "arch-hathi-serializer": {
+        "color": "rgba(255,0,0,0.55)",
+        "desc": "This plugin serializer enriches the records with data from Hathi Trust allowing us to embed a digital surrogate into the Item page for titles available from Hathi. This includes scans contributed by other libraries, for example Hathi may have a digital version of a Harvard title, we have the same resource but it was never sent to Hathi, we can make the Harvard volume available to view.",
+        "opacity" : 1
+    },
+    "arch-kafka": {
+        "color": "rgba(76,187,23,0.55)",
+        "desc": "Our central messaging system, records can be passed between services and allows for transparency for other services to reuse the same data for other applications.<br><br> All Sierra and ReCAP data is stored historically, meaning the system can “re-play” all the data messages allowing for recovery without having to reharvest from Sierra and SCSB.",
+        "opacity" : 1
+    },
+    "arch-kafka-gateway": {
+        "color": "rgba(76,187,23,0.55)",
+        "desc": "The gateway that pushes ReCAP and Sierra bibs and items into the messaging system. A PHP application.",
+        "opacity" : 1
+    },
+    "arch-more-serializer": {
+        "color": "rgba(255,0,0,0.55)",
+        "desc": "Future plugin serializers can be written to enrich our resources including, OCLC Worldcat data, VIAF, Wikidata, Space/Time, Digital Collections, Archives Portal, etc…",
+        "opacity" : 1
+    },
+    "arch-nypl-core": {
+        "color": "rgba(255,255,0,0.55)",
+        "desc": "A BSON (Binary JSON) store that holds the serialized resources and publishes them into the Kafka queue for indexing to appear on the Discovery website. <br><br>This flexible model supports  us to remediate and enrich our resources for better discovery, which the current MARC standard does not. It also aligns us with Bibframe (Library of Congress) and Fedora/Hydra digital repository (PCDM) to insure digital and complex resources can best be represented and discovered by our patrons. <a href=\"https://confluence.nypl.org/display/DIS/Core+Ontology\">More info about the model</a>.",
+        "opacity" : 1
+    },
+    "arch-nypl-middleware": {
+        "color": "rgba(255,255,0,0.55)",
+        "desc": "The core of the Research Item Hold functionality. It accepts patron requests from the Discovery website for ReCAP and Sierra resources and interacts with SCSB and Sierra to place a hold on that volume to allow fulfillment (including temporary item creation for partner resources). The Middleware also supports other functionality including Patron log in/barcode validation.",
+        "opacity" : 1
+    },
+    "arch-other-services": {
+        "color": "grey",
+        "desc": "Other library services can listen to the data being passed in the Kafka system and reuse that data for other projects.",
+        "opacity" : 0.25
+    },
+    "arch-recap": {
+        "color": "rgba(255,255,0,0.55)",
+        "desc": "The ReCAP Shared Collection database and SCSB (Shared Collection Service Bus) being built by the vendor HTC. It facilitate ReCAP functionality by communicating with our NYPL Middleware to allow patrons to request a partner resource and create a temporary item in our Sierra tied to our patron.",
+        "opacity" : 1
+    },
+    "arch-recap-havester": {
+        "color": "rgba(255,255,0,0.55)",
+        "desc": "The process that polls the SCSB API for new and changed resources from the three Shared Collection partners and published them into the Kafka publisher. A Java application.",
+        "opacity" : 1
+    },
+    "arch-sierra": {
+        "color": "rgba(76,187,23,0.55)",
+        "desc": "Our Innovative Sierra ILS. NYPL middleware interacts via NCIP and we harvest data, validate patron’s barcode via its HTTP REST API.",
+        "opacity" : 1
+    },
+    "arch-sierra-havester": {
+        "color": "rgba(76,187,23,0.55)",
+        "desc": "A process that polls the Sierra HTTP API for new and updated bibs and items and published it to Kafka gateway. A Java application.",
+        "opacity" : 1
+    },
+    "arch-sierra-replica": {
+        "color": "grey",
+        "desc": "A hosted Postgres database replicated from the production system. Could be used to harvest data, run reports, etc. Waiting for the completion of the contract renewal to have Innovative complete setup.",
+        "opacity" : 0.25
+    }
+}
