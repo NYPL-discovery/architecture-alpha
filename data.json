@@ -51,7 +51,7 @@
     },
     "arch-kafka": {
         "color": "rgba(76,187,23,0.55)",
-        "desc": "Our central messaging system, records can be passed between services and allows for transparency for other services to reuse the same data for other applications.<br><br> All Sierra and ReCAP data is stored historically, meaning the system can “re-play” all the data messages allowing for recovery without having to reharvest from Sierra and SCSB.",
+        "desc": "Our central messaging system, records can be passed between services and allows for transparency for other services to reuse the same data for other applications.<br><br> All Sierra and ReCAP data is stored historically, meaning the system can “replay” all the data messages allowing for recovery without having to reharvest from Sierra and SCSB.",
         "opacity" : 1
     },
     "arch-kafka-gateway": {
