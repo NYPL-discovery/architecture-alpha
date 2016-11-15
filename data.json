@@ -36,7 +36,7 @@
     },
     "arch-discovery-website": {
         "color": "rgba(255,255,0,0.55)",
-        "desc": "The Discovery website, a React application with server side rendering. Houses the Home/Search Result/Item pages.",
+        "desc": "The Discovery website, a React application with server side rendering. Houses the Home/Search Result/Item pages.<br><br> <a href=\"https://nypl-discovery.github.io/discovery-designs/status/\">View front-end components and status</a><br><br>",
         "opacity" : 1
     },
     "arch-elasticsearch": {
